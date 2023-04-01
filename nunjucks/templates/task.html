@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% set title = 'Task 2 - Nunjucks' %}
+
+{% block content %}
+  <h1>task 2</h1>
+  <ul>
+    {% for item in items %}
+      <li>
+        {% if (item.id % 2 === 0) %}
+          <p>name: {{ item.name }}</p>
+          <p>username: {{ item.username }}</p>
+          <p>email: {{ item.email }}</p>
+        {% else %}
+          <p>I am Odd!</p>
+        {% endif %}
+
+        <p>Address:</p>
+        <ul>
+          {% for key, value in item.address %}
+            <li>{{ key }}: {{ value }}</li>
+          {% endfor %}
+        </ul>
+
+        {% if item.email.endsWith('.biz') %}
+          <p>biz email: <span>{{ item.name }} - {{ item.email }}</span></p>
+        {% endif %}
+
+        {% if ["Aliyaview", "Howemouth", "Gwenborough"] | intersect(item.address.city) | length %}
+          <p>City Name: {{ item.address.city }}</p>
+          <p>Zipcode: {{ item.address.zipcode }}</p>
+          <p>Geo: {{ item.address.geo.lat }}, {{ item.address.geo.lng }}</p>
+        {% endif %}
+
+        {% if item.company.catchPhrase|length >= 15 %}
+          <p>Catch phrase:</p>
+          <p>{{ item.company.catchPhrase }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>    
+{% endblock %}
