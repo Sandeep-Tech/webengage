@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you</title>
+  <style>
+    main { text-align: center; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>
+      Thanks a ton for taking out your precious time and for completing the survey
+    </h1>
+    <p id="email"></p>
+    <p id="phone"></p>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+    const phone = params.get('phone');
+    const countryCode = params.get('countryCode');
+    const dialCode = params.get('dialCode');
+
+    const emailEl = document.querySelector('#email');
+    const phoneWrapperEl = document.querySelector('#phone-wrapper');
+    const phoneEl = document.querySelector('#phone');
+
+    if (email) emailEl.innerText = email;
+    if (phone) phoneEl.innerText = dialCode ? `${dialCode} ${phone}` : phone;
+  </script>
+</body>
+</html>

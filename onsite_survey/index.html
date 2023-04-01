@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onsite Survey</title>
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;600&display=swap" rel="stylesheet">
+  <!-- libs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.min.js"></script>  
+</head>
+<body>
+  <div class="survey">
+    <button class="close-btn">
+      <img src="./cross.svg" />
+    </button>
+      <div class="survey-left">
+        <img src="./smiling-man.png" alt="A man, smiling">
+      </div>
+      <div class="survey-right">
+        <div class="survey-logo">
+          <img src="" alt="Logo">
+        </div>
+        <h2 class="survey-msg">
+          <span class="survey-msg--brilliant">Get a FREE</span>
+          <br/>consultation with an expert
+        </h2>
+        <form class="survey-form" id="survey-form">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              name="email"
+              id="email-input"
+              placeholder="Enter your email"
+            >
+            <span id="email-input-error" class="input-error">error</span>
+          </div>
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              name="phone"
+              min="0"
+              id="phone-number-input"
+              placeholder="Enter your mobile"
+              data-intl-tel-input-id="phone-number-input"
+            />
+            <span id="phone-number-input-error" class="input-error">error</span>
+          </div>
+          <button
+            type="submit"
+            class="talk-to-us"
+          >
+            <span class="text">Talk to Us</span>
+            <img src="./right-arrow.png" class="icon" />
+          </button>
+        </form>
+    </div>
+  </div> 
+  <!-- scripts -->
+  <script src="./index.js"></script>
+</body>
+</html>
+
+<!-- todo -->
+<!-- change cross icon -->
+<!-- add right-arrow icon to talk-to-us button -->

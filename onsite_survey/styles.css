@@ -1,0 +1,63 @@
+/* reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+}
+
+html, body { width: 100%;  }
+
+
+body { font-family: 'Poppins', sans-serif; color: #000; }
+
+.survey { 
+  width: 100%; max-width: 970px; padding: 30px 30px 0 30px;
+  position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 50px; border: 1px solid #000;
+}
+.survey .close-btn {
+  position: absolute; top: 20px; right: 20px;
+  border: none; background: transparent;
+  cursor: pointer;
+}
+.survey .close-btn img { width: 30px; height: 30px; }
+
+.survey .survey-left {
+  object-fit: contain; max-width: 100%;
+  display: flex; align-items: flex-end;
+}
+.survey .survey-left img { width: 100%; height: auto; }
+
+.survey-right { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-bottom: 30px; }
+.survey-msg { text-align: center; font-size:26px; font-weight: 500; }
+.survey-msg .survey-msg--brilliant { text-align: center; font-size:38px; font-weight: 600; }
+.survey-form { display: flex; flex-direction: column; width: 100%; gap: 10px; }
+.survey-form .input-wrapper { position: relative; }
+.survey-form .input-error { position: absolute; right: 0; color: red; transform: translateY(50%); margin-right: 10px; display: none; background: rgba(255, 255, 255, 0.9); }
+.survey-form .input-error.show { display: inline-block; }
+.survey-form input { width: 100%; font-size: 16px; line-height: 50px; padding: 0 10px; }
+.survey-form input::-webkit-input-placeholder { color: #000; }
+.survey-form input:-moz-placeholder {color: #000; }
+.survey-form input::-moz-placeholder {color: #000; }
+.survey-form input:-ms-input-placeholder {color: #000; }
+.iti { width: 100%; }
+
+.survey-form .talk-to-us {
+  display: flex; justify-content: center; align-items: center; gap: 6px;
+  font-size: 16px; line-height: 50px; color: #fff;
+  margin-top: 15px; background-color: black; cursor: pointer;
+}
+.survey-form .talk-to-us .icon { width: 25px; }
+
+@media only screen and (max-width: 860px) {
+  .survey { grid-template-columns: 1fr; padding: 0; }
+  .survey .survey-left { background: #f4f4f4; padding: 30px 30px 0 30px; }
+  .survey .survey-right { padding: 40px 30px; }
+}
+
+@media only screen and (max-width: 600px) {
+  .survey .survey-left { padding: 20px 20px 0 20px; }
+  .survey .survey-right { gap: 10px; padding-bottom: 30px; }
+  .survey .survey-right .survey-msg { line-height: 140%; }
+  .survey-right .survey-form { margin-top: 24px; }
+  .survey-form .talk-to-us { margin-top: 10px; }
+}
